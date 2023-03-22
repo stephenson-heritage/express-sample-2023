@@ -1,17 +1,17 @@
-const express = require('express');
+const express = require('express'); // import the express module
+const app = express(); // make an express object - represents an express app
 
+const port = 9000; // constant (used later)
 
+app.get('/', (req, res) => { // handler for the "/" path
 
-const app = express();
-
-const port = 9000;
-
-
-app.get('/', (req, res) => {
-
-	res.send("hello world");
-
+	res.send("hello world"); // sends a response and terminates the connection
 });
 
+app.get('/:msg/:text', (req, res) => { // handler for the "/" path
 
-app.listen(port, () => console.log(`App running on port: ${port}`));
+	// req.params.msg 
+	res.send(`message: ${req.params.msg}, text:${req.params.text}`); // sends a response and terminates the connection
+});
+
+app.listen(port, () => { console.log(`App running on port: ${port}`) });  // start listening for requests
