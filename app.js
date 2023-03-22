@@ -9,8 +9,7 @@ app.get('/', (req, res) => { // handler for the "/" path
 });
 
 app.get('/:msg/:text', (req, res) => { // handler for the "/" path
-
-	// req.params.msg 
+	// req.params.msg, req.params.text
 	res.send(`message: ${req.params.msg}, text:${req.params.text}`); // sends a response and terminates the connection
 });
 
